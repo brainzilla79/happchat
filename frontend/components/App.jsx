@@ -1,8 +1,10 @@
 import React from 'react';
+import Header from './header/header';
 
 const App = () => (
   <div>
-    <h1>Happchat</h1>
+    <Header/>
+    
   </div>
 );
 
