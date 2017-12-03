@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from 'react-router-dom';
-import { withRouter } from 'react-router';
+import { Link } from "react-router-dom";
+import { withRouter } from "react-router";
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -25,13 +25,14 @@ class SessionForm extends React.Component {
   }
 
   update(field) {
-    return e => this.setState({[field]: e.target.value });
+    return e => this.setState({ [field]: e.target.value });
   }
 
   render() {
-    let title, username, navLink;
+    let btnValue, title, username, navLink;
     if (this.props.formType === "signup") {
-      title = "Sign Up";
+      title = "Sign up to join";
+      btnValue = "Sign Up";
       username = (
         <input
           className="session-form-txt"
@@ -42,18 +43,23 @@ class SessionForm extends React.Component {
         />
       );
       navLink = (
-      <div>
-        <p>Already signed up?</p>  
-        <Link onClick={this.props.clearErrors} to="/login">Login</Link>
-      </div>
+        <div>
+          <p>Already signed up?</p>
+          <Link onClick={this.props.clearErrors} to="/login">
+            Login
+          </Link>
+        </div>
       );
     } else {
-      title = "Login";
-      username = <div></div>;
+      title = "Sign in to your account";
+      btnValue = "Sign In";
+      username = <div />;
       navLink = (
         <div>
           <p>Not signed up yet?</p>
-          <Link onClick={this.props.clearErrors} to="/signup">Sign Up</Link>
+          <Link onClick={this.props.clearErrors} to="/signup">
+            Sign Up
+          </Link>
         </div>
       );
     }
@@ -63,28 +69,30 @@ class SessionForm extends React.Component {
       </li>
     ));
     return (
-      <div className="session-form-container">
-        <form className="session-form" onSubmit={this.handleSubmit}>
+      <div className="session-page">
+        <div className="session-form-container">
           <h1 className="session-form-title">{title}</h1>
-          {username}
-          <input 
-            className="session-form-txt"
-            type="text"
-            placeholder="Email"
-            value={this.state.email}
-            onChange={this.update("email")}
-          />
-          <input 
-            className="session-form-txt"
-            type="password"
-            placeholder="Password"
-            value={this.state.password}
-            onChange={this.update("password")}
-          />
-          {errors}
-          <input type="submit" value={title} className="submit-btn"/>
-        </form>
+          <form className="session-form" onSubmit={this.handleSubmit}>
+            {username}
+            <input
+              className="session-form-txt"
+              type="text"
+              placeholder="Email"
+              value={this.state.email}
+              onChange={this.update("email")}
+            />
+            <input
+              className="session-form-txt"
+              type="password"
+              placeholder="Password"
+              value={this.state.password}
+              onChange={this.update("password")}
+            />
+            {errors}
+            <input type="submit" value={btnValue} className="submit-btn" />
+          </form>
         </div>
+      </div>
     );
   }
 }
