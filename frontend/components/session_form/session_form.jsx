@@ -1,6 +1,8 @@
 import React from "react";
+import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router';
 
-export default class SessionForm extends React.Component {
+class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     let state;
@@ -23,11 +25,11 @@ export default class SessionForm extends React.Component {
   }
 
   update(field) {
-    return e => this.setState({[field]: e.traget.value });
+    return e => this.setState({[field]: e.target.value });
   }
 
   render() {
-    let title, username;
+    let title, username, navLink;
     if (this.props.formType === "signup") {
       title = "Sign Up";
       username = (
@@ -39,10 +41,27 @@ export default class SessionForm extends React.Component {
           onChange={this.update("username")}
         />
       );
+      navLink = (
+      <div>
+        <p>Already signed up?</p>  
+        <Link onClick={this.props.clearErrors} to="/login">Login</Link>
+      </div>
+      );
     } else {
       title = "Login";
       username = <div></div>;
+      navLink = (
+        <div>
+          <p>Not signed up yet?</p>
+          <Link onClick={this.props.clearErrors} to="/signup">Sign Up</Link>
+        </div>
+      );
     }
+    const errors = this.props.errors.map((err, i) => (
+      <li className="errors" key={i}>
+        {err}
+      </li>
+    ));
     return (
       <div className="session-form-container">
         <form className="session-form" onSubmit={this.handleSubmit}>
@@ -62,9 +81,12 @@ export default class SessionForm extends React.Component {
             value={this.state.password}
             onChange={this.update("password")}
           />
+          {errors}
           <input type="submit" value={title} className="submit-btn"/>
         </form>
         </div>
     );
   }
 }
+
+export default withRouter(SessionForm);

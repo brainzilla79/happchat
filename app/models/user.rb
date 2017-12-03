@@ -15,6 +15,7 @@ class User < ApplicationRecord
   validates :email, :username, :password_digest, :session_token, presence: true
   validates :email, :username, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
+  validates_email_format_of :email, :message => 'Enter a valid email address'
 
   attr_reader :password
 
