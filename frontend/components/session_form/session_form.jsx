@@ -43,7 +43,7 @@ class SessionForm extends React.Component {
         />
       );
       navLink = (
-        <div>
+        <div className="session-link">
           <p>Already signed up?</p>
           <Link onClick={this.props.clearErrors} to="/login">
             Login
@@ -55,7 +55,7 @@ class SessionForm extends React.Component {
       btnValue = "Sign In";
       username = <div />;
       navLink = (
-        <div>
+        <div className="session-link">
           <p>Not signed up yet?</p>
           <Link onClick={this.props.clearErrors} to="/signup">
             Sign Up
@@ -91,6 +91,7 @@ class SessionForm extends React.Component {
             {errors}
             <input type="submit" value={btnValue} className="submit-btn" />
           </form>
+          {navLink}
         </div>
       </div>
     );

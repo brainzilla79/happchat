@@ -1,7 +1,7 @@
 @import "./fonts.scss";
 
 .session-page {
-  background: #f9f9f9;
+  background: #f4f3f3;
   width: 100%;
   position: absolute;
   font-family: $sans-serif;
@@ -10,10 +10,10 @@
 .session-form-container {
   background: #fff;
   width: 600px;
-  height: 300px;
-  margin: 60px auto;
+  margin: 80px auto;
   text-align: center;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, .1);
+  border-radius: 4px;
   h1 {
     font-size: 34px;
     padding: 20px 0;
@@ -32,5 +32,32 @@
     border: solid 1px #b9b7b7;
     font-size: 16px;
     padding: 10px;
+    &[type="submit"] {
+      background: #2ea664;
+      height: 50px;
+      color: #fff;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 20px;
+      &:hover {
+        cursor: pointer;
+      }
+    } 
+  }
+}
+
+.session-link {
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  width: 200px;
+  justify-content: space-between;
+  a {
+    color: rgb(36, 70, 180);
+    text-decoration: none;
+    &:hover {
+      cursor: pointer;
+      border-bottom: 1px solid rgb(36, 70, 180);
+    }
   }
 }
