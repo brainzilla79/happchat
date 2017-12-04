@@ -17,6 +17,10 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6, allow_nil: true }
   validates_email_format_of :email, :message => 'Enter a valid email address'
 
+  has_many :messages
+  has_many :channel_memberships
+  has_many :channels, through: :channel_memberships
+  
   attr_reader :password
 
   after_initialize :ensure_session_token
