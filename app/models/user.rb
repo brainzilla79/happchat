@@ -18,7 +18,7 @@ class User < ApplicationRecord
   validates_email_format_of :email, :message => 'Invalid email address'
 
   has_many :messages
-  has_many :channel_memberships
+  has_many :channel_memberships, dependent: :destroy
   has_many :channels, through: :channel_memberships
   
   attr_reader :password
