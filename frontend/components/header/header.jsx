@@ -1,5 +1,6 @@
 import React from "react";
 import AuthNavContainer from "../nav/auth_nav_container";
+import Link from 'react-router-dom';
 
 export default class Header extends React.Component {
   render() {

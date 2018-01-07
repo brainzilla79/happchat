@@ -24,6 +24,7 @@ class User < ApplicationRecord
   attr_reader :password
 
   after_initialize :ensure_session_token
+  after_create :add_to_general
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
@@ -49,5 +50,10 @@ class User < ApplicationRecord
 
   def ensure_session_token
     self.session_token ||= SecureRandom.urlsafe_base64
+  end 
+
+  def add_to_general
+    general = Channel.find_by(name: "General")
+    ChannelMembership.create!(user_id: self.id, channel_id: general.id)
   end 
 end
