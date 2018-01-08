@@ -7,7 +7,6 @@ export default class ChannelIndex extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props);
     this.props.getAllChannels();
   }
 
@@ -15,9 +14,12 @@ export default class ChannelIndex extends React.Component {
     const channels = this.props.channels.map(channel => (
       <ChannelIndexItem key={channel.id} channel={channel} />
     ));
-    return (<div>
-      <h1>Channels</h1>
-      <div>{channels}</div>
-    </div>);
+    return <div className="channels-sidebar">
+        <div className="channels-header">
+          <h1>Channels</h1>
+          <i className="fa fa-plus" aria-hidden="true" />
+        </div>
+        <ul className="channels-list">{channels}</ul>
+      </div>;
   }
 }

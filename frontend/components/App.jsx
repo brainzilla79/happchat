@@ -15,7 +15,7 @@ const App = () => (
       <AuthRoute exact path="/" component={SplashPage} />
       <AuthRoute exact path="/login" component={SessionFormContainer} />
       <AuthRoute exact path="/signup" component={SessionFormContainer} />
-      <ProtectedRoute exact path="/messages" component={ChatView} />
+      <ProtectedRoute path="/messages/:channelId" component={ChatView} />
     </Switch>
     <Footer />
   </div>

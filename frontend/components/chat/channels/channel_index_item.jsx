@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
 
 export default class ChannelIndexItem extends React.Component {
   constructor(props) {
@@ -6,6 +7,12 @@ export default class ChannelIndexItem extends React.Component {
   }
 
   render() {
-    return <div>{this.props.channel.name}</div>
+    return (
+      <li>
+        <Link to={`/messages/${this.props.channel.id}`}>
+          {this.props.channel.name}
+        </Link>
+      </li>
+    );
   }
 }
