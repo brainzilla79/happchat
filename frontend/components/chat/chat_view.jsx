@@ -13,7 +13,6 @@ export default class ChatView extends React.Component {
       <ChannelIndexContainer />
       <MessagesIndexContainer/>
       {/* <MessagesFormContainer/> */}
-      <div className="messages-container">Messages</div>
     </div>
     );
   }

@@ -15,6 +15,11 @@ export default class MessagesIndex extends React.Component {
     const messages = this.props.messages.map(message => (
       <MessageIndexItem key={message.id} message={message} />
     ));
-    return <ul className="message-list">{messages}</ul>;
+    return (
+      <div className="message-index">
+        <h1>Messages</h1>
+        <ul className="message-list">{messages}</ul>
+      </div>
+    );
   }
 }

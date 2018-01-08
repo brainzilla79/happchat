@@ -6,9 +6,8 @@ Rails.application.routes.draw do
     resources :users, only: [:create]
     resource :session, only: [:create, :destroy]
     resources :channels, only: [:create, :show, :index] do 
-      resources :messages, only: [:index]
+      resources :messages, only: [:index, :create]
     end 
-    resources :messages, only: [:create, :destroy]
   end 
   # For details on the DSL within this file, see http://guides.rubyonrails.org/routing.html
 end
