@@ -16,3 +16,8 @@
 
  @import "font-awesome-sprockets";
  @import "font-awesome";
+ @import "./fonts.scss";
+
+ body {
+   font-family: $sans-serif;
+ }

@@ -17,7 +17,7 @@ export default class MessagesIndex extends React.Component {
     ));
     return (
       <div className="message-index">
-        <h1>Messages</h1>
+        <h1></h1>
         <ul className="message-list">{messages}</ul>
       </div>
     );
