@@ -1,5 +1,6 @@
 import React from "react";
 import MessageIndexItem from "./message_index_item";
+import MessageFormContainer from './message_form_container';
 
 export default class MessagesIndex extends React.Component {
   constructor(props) {
@@ -7,7 +8,6 @@ export default class MessagesIndex extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props.match.params.channelId);
     this.props.getChannelMessages(this.props.match.params.channelId);
   }
 
@@ -19,6 +19,7 @@ export default class MessagesIndex extends React.Component {
       <div className="message-index">
         <h1></h1>
         <ul className="message-list">{messages}</ul>
+        <MessageFormContainer />
       </div>
     );
   }

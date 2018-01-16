@@ -13,4 +13,6 @@
 class Message < ApplicationRecord
   belongs_to :user
   belongs_to :channel
+
+  after_commit { MessageBroadcastJob.perform_later(self, self.channel) }
 end

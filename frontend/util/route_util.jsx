@@ -11,22 +11,22 @@ const Protected = ({ component: Component, path, exact, loggedIn }) => (
   />
 );
 
-const Auth = ({ component: Component, path, exact, loggedIn }) => (
-  <Route
-    path={path}
-    render={props =>
-      !loggedIn ? <Component {...props} /> : <Redirect to="/messages/2" />
-    }
-  />
-);
+const Auth = ({ component: Component, path, exact, loggedIn }) => {
+  return (
+    <Route
+      path={path}
+      render={props =>
+        !loggedIn ? <Component {...props} /> : <Redirect to="/messages/3" />
+      }
+    />
+  );
+};
 
 const mapStateToProps = state => {
   return { loggedIn: Boolean(state.session.currentUser) };
 };
 
-export const AuthRoute = withRouter(
-  connect(mapStateToProps, null)(Auth)
-);
+export const AuthRoute = withRouter(connect(mapStateToProps, null)(Auth));
 
 export const ProtectedRoute = withRouter(
   connect(mapStateToProps, null)(Protected)

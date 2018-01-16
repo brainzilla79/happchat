@@ -8,7 +8,7 @@ export default class MessageIndexItem extends React.Component {
   render() {
     return (
       <li>
-      <div>{this.props.message.user.username}</div>
+      <div>{this.props.message.username}</div>
       <div>{this.props.message.body}</div>
       </li>
     );
