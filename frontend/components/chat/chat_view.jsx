@@ -10,10 +10,11 @@ export default class ChatView extends React.Component {
 
   componentDidMount() {
     this.props.getAllChannels();
+    console.log(typeof this.props.match.params.channelId);
   }
 
   setSockets(channels) {
-    channels.forEach(channel => this.setSocket(channel.id));
+    channels.forEach(channel => this.addSocket(channel.id));
   }
 
   setSocket(channelId) {
@@ -34,7 +35,9 @@ export default class ChatView extends React.Component {
         connected: () => {},
         disconnected: () => {},
         received: message => {
-          this.props.receiveMessage(message);
+          if (this.props.match.params.channelId === String(message.channel.id)) {
+            this.props.receiveMessage(message);
+          }
         }
       }
     );
