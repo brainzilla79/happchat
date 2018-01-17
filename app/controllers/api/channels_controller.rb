@@ -16,8 +16,11 @@ class Api::ChannelsController < ApplicationController
 
   def create
     @channel = Channel.new(channel_params)
-
     if @channel.save
+      user_ids = params["user_ids"]
+      # debugger
+      user_ids << current_user.id
+      user_ids.each { |user_id| subscribe_user(user_id, @channel.id) }
       render :show
     else 
       render json: @channel.errors.full_messages, status: 422 
@@ -27,6 +30,12 @@ class Api::ChannelsController < ApplicationController
   private 
 
   def channel_params
-    params.require(:channel).premit(:name)
+    params.require(:channel).permit(:name)
   end 
+
+  def subscribe_user(user_id, channel_id)
+    membership = ChannelMembership.new(user_id: user_id, channel_id: channel_id)
+    membership.save!
+  end
+
 end

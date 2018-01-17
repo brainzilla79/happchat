@@ -13,7 +13,6 @@ export default class ChatView extends React.Component {
   }
 
   setSockets(channels) {
-    console.log(channels);
     channels.forEach(channel => this.setSocket(channel.id));
   }
 

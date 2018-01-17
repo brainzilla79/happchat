@@ -10,6 +10,12 @@ export default class MessagesIndex extends React.Component {
   componentDidMount() {
     this.props.getChannelMessages(this.props.match.params.channelId);
   }
+  
+  componentWillReceiveProps(nextProps) {
+    if (this.props.match.params.channelId != nextProps.match.params.channelId) {
+      this.props.getChannelMessages(nextProps.match.params.channelId);
+    }
+  }
 
   render() {
     const messages = this.props.messages.map(message => (

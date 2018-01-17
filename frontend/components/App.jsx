@@ -5,6 +5,7 @@ import SessionFormContainer from "./session_form/session_form_container";
 import Footer from "./footer/footer";
 import { ProtectedRoute, AuthRoute } from "../util/route_util";
 import ChatViewContainer from "./chat/chat_view_container";
+import ChannelFormContainer from './chat/channels/channel_form_container';
 import SplashPage from "./splash_page/splash_page";
 
 const App = () => (
@@ -15,6 +16,7 @@ const App = () => (
       <AuthRoute exact path="/login" component={SessionFormContainer} />
       <AuthRoute exact path="/signup" component={SessionFormContainer} />
       <ProtectedRoute path="/messages/:channelId" component={ChatViewContainer} />
+      <ProtectedRoute path="/channels/create" component={ChannelFormContainer}/>
     </Switch>
     <Footer />
   </div>
