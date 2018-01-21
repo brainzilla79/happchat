@@ -22,9 +22,14 @@ export default class MessageForm extends React.Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <input type="text" value={this.state.body} onChange={this.update()} />
-          <input type="submit" value="Send" />
+        <form className='msg-form' onSubmit={this.handleSubmit}>
+          <input
+            type="text"
+            value={this.state.body}
+            onChange={this.update()}
+            className="msg-form-body"
+          />
+          <input type="submit" value="Send" className="msg-form-submit" />
         </form>
       </div>
     );

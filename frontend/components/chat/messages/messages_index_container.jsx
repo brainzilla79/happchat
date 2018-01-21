@@ -3,9 +3,10 @@ import { withRouter } from "react-router-dom";
 import MessagesIndex from "./messages_index";
 import { getChannelMessages } from "../../../actions/message_actions";
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
   return {
-    messages: Object.values(state.messages)
+    messages: Object.values(state.messages),
+    channel: state.channels[ownProps.match.params.channelId]
   };
 };
 

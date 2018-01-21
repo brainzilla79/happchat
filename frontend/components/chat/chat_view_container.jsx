@@ -5,7 +5,7 @@ import { receiveMessage } from '../../actions/message_actions';
 import { getChannels } from '../../selectors/channel_selectors';
 
 const mapStateToProps = state => ({
-  channels: getChannels(state)
+  channels: Object.values(state.channels)
 });
 
 const mapDispatchToProps = state => dispatch => ({

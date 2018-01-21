@@ -35,5 +35,9 @@
   "bugs": {
     "url": "https://github.com/brainzilla79/happchat/issues"
   },
-  "homepage": "https://github.com/brainzilla79/happchat#readme"
+  "homepage": "https://github.com/brainzilla79/happchat#readme",
+  "devDependencies": {
+    "browser-sync": "^2.23.5",
+    "gulp": "^3.9.1"
+  }
 }

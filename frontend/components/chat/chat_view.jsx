@@ -10,7 +10,7 @@ export default class ChatView extends React.Component {
 
   componentDidMount() {
     this.props.getAllChannels();
-    console.log(typeof this.props.match.params.channelId);
+
   }
 
   setSockets(channels) {

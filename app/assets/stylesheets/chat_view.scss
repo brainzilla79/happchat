@@ -2,3 +2,55 @@
   display: grid;
   grid-template-columns: 20% auto;
 }
+
+.channels-sidebar {
+  margin: 10px;
+  min-height: 85vh;
+}
+
+.channels-header {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  justify-content: space-between;
+  i:hover {
+    cursor: pointer;
+  }
+}
+
+.channels-list {
+  margin: 10px;
+}
+
+.msg-list {
+  margin: 20px 0;
+}
+
+.msg-index {
+  padding: 20px;
+  border-left: 1px solid rgba(0, 0, 0, .1);
+}
+
+.msg {
+  margin: 10px 0;
+}
+
+.msg-form{
+  input {
+    border-radius: 4px;
+    border: solid 1px #b9b7b7;
+  }
+}
+
+.msg-username {
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.msg-form-body {
+  margin-right: 10px;
+}
+
+.msg-form-submit:hover {
+  cursor: pointer;
+}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export default class MessageIndexItem extends React.Component {
   constructor(props) {
@@ -7,9 +7,9 @@ export default class MessageIndexItem extends React.Component {
 
   render() {
     return (
-      <li>
-      <div>{this.props.message.username}</div>
-      <div>{this.props.message.body}</div>
+      <li className="msg">
+        <div className="msg-username">{this.props.message.username}</div>
+        <div className="msg-body">{this.props.message.body}</div>
       </li>
     );
   }
