@@ -22,18 +22,19 @@ export default class MessagesIndex extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     if (this.props.channel) {
       const messages = this.props.messages.map(message => (
         <MessageIndexItem key={message.id} message={message} />
       ));
-      return (
-        <div className="msg-index">
-          <h1 className="channel-name">{this.props.channel.name}</h1>
-          <ul className="msg-list">{messages}</ul>
-          <MessageFormContainer />
-        </div>
-      );
+      return <div className="msg-index">
+          <div className='msg-header'>
+            <h1 className="channel-name">{this.props.channel.name}</h1>
+          </div>
+          <div className="msg-container">
+            <ul className="msg-list">{messages}</ul>
+            <MessageFormContainer />
+          </div>
+        </div>;
     } else {
       return <div />;
     }

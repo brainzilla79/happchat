@@ -8,7 +8,8 @@ export default class MessageForm extends React.Component {
   }
 
   componentDidMount() {
-    document.getElementById('msg-input').focus();
+    const body = document.getElementById('msg-input');
+    body.focus();
   }
 
   handleSubmit() {
@@ -33,7 +34,6 @@ export default class MessageForm extends React.Component {
             className="msg-form-body"
             placeholder={`Message #${this.props.channel.name}`}
           />
-          {/* <input type="submit" value="Send" className="msg-form-submit" /> */}
         </form>
       </div>
     );

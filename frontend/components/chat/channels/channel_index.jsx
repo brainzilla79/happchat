@@ -17,7 +17,7 @@ export default class ChannelIndex extends React.Component {
     ));
     return <div className="channels-sidebar">
         <div className="channels-header">
-          <h1>Channels</h1>
+          <h1>My Channels</h1>
           <Link to="/channels/create"><i className="fa fa-plus" aria-hidden="true" /></Link>
         </div>
         <ul className="channels-list">{channels}</ul>

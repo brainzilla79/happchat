@@ -4,8 +4,10 @@
 }
 
 .channels-sidebar {
-  margin: 10px;
+  padding: 10px;
   min-height: 80vh;
+  // background: #4d394b;
+  // color: white;
 }
 
 .channels-header {
@@ -13,6 +15,7 @@
   flex-direction: row;
   padding: 10px;
   justify-content: space-between;
+  font-weight: 800;
   i:hover {
     cursor: pointer;
   }
@@ -27,8 +30,29 @@
 }
 
 .msg-index {
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  position: relative;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.msg-header {
+  background: white;
+  height: 40px;
+  position: absolute;
+  z-index: 1;
+  padding: 10px 20px;
+  width: 98%;
+  top: 10px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+}
+
+.msg-container {
+  position: absolute;
+  bottom: 0;
   padding: 20px;
-  border-left: 1px solid rgba(0, 0, 0, .1);
+  width: 96%;
+  overflow: hidden;
 }
 
 .channel-name {
@@ -38,13 +62,6 @@
 
 .msg {
   margin: 10px 0;
-}
-
-.msg-form{
-  input {
-    border-radius: 8px;
-    border: solid 1px #b9b7b7;
-  }
 }
 
 .msg-username {
@@ -60,15 +77,17 @@
 
 .msg-form-body {
   // margin: 0 10px;
-  height: 40px;
+  height: 30px;
   width: 98%;
   font-size: 16px;
-  padding: 0 10px;
+  padding: 10px;
+  outline: none;
+  border-radius: 8px;
+  border: solid 1px #b9b7b7;
 }
 
 .msg-form-submit {
   height: 40px;
-
 }
 
 .msg-form-submit:hover {

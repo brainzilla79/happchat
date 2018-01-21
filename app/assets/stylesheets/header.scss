@@ -36,7 +36,7 @@
     color: #717274;
     box-shadow: inset 0 0 0 0.6px #5c5c61;
     padding: 10px;
-    border-radius: 2.4px;
+    border-radius: 8px;
     transition: all 0.4s;
     &:hover {
       cursor: pointer;
@@ -45,7 +45,7 @@
     }
   }
   #logout {
-    margin: 10px 20px;
+    margin: 10px;
   }
 }
 
@@ -55,7 +55,7 @@
   height: 16px;
   border-radius: 50%;
   float: left;
-  margin: 0px 10px;
+  margin: 0px 6px;
 }
 
 .logo-bar {
