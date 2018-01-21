@@ -5,7 +5,7 @@ import { createChannelMessage } from '../../../actions/message_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   loggedIn: Boolean(state.session.currentUser),
-  channelId: ownProps.match.params.channelId
+  channel: state.channels[ownProps.match.params.channelId]
 });
 
 const mapDispatchToProps = state => dispatch => ({

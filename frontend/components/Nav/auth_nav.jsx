@@ -5,9 +5,12 @@ export default class AuthNav extends React.Component {
   render() {
     if (this.props.currentUser) {
       return <div className="auth-nav">
-          <div id="logout" className="nav-link" onClick={this.props.logout}>
-            Logout
-          </div>
+          <ul>
+            <li><div className='login-icon'></div>{this.props.currentUser.username}</li>
+            <li id="logout" className="nav-link" onClick={this.props.logout}>
+              Logout
+            </li>
+          </ul>
         </div>;
     } else {
       return (

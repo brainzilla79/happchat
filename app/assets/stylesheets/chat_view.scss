@@ -5,7 +5,7 @@
 
 .channels-sidebar {
   margin: 10px;
-  min-height: 85vh;
+  min-height: 80vh;
 }
 
 .channels-header {
@@ -31,13 +31,18 @@
   border-left: 1px solid rgba(0, 0, 0, .1);
 }
 
+.channel-name {
+  font-size: 26px;
+  color: #9c9797;
+}
+
 .msg {
   margin: 10px 0;
 }
 
 .msg-form{
   input {
-    border-radius: 4px;
+    border-radius: 8px;
     border: solid 1px #b9b7b7;
   }
 }
@@ -48,7 +53,16 @@
 }
 
 .msg-form-body {
-  margin-right: 10px;
+  // margin: 0 10px;
+  height: 40px;
+  width: 98%;
+  font-size: 16px;
+  padding: 0 10px;
+}
+
+.msg-form-submit {
+  height: 40px;
+
 }
 
 .msg-form-submit:hover {

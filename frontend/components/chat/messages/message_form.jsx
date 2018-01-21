@@ -7,10 +7,12 @@ export default class MessageForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+    document.getElementById('msg-input').focus();
+  }
 
   handleSubmit() {
-    const message = { body: this.state.body, channel_id: this.props.channelId };
+    const message = { body: this.state.body, channel_id: this.props.channel.id };
     this.props.createChannelMessage(message);
     this.setState({ body: "" });
   }
@@ -27,9 +29,11 @@ export default class MessageForm extends React.Component {
             type="text"
             value={this.state.body}
             onChange={this.update()}
+            id='msg-input'
             className="msg-form-body"
+            placeholder={`Message#${this.props.channel.name}`}
           />
-          <input type="submit" value="Send" className="msg-form-submit" />
+          {/* <input type="submit" value="Send" className="msg-form-submit" /> */}
         </form>
       </div>
     );

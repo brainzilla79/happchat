@@ -3,8 +3,11 @@ var browserSync = require("browser-sync").create();
 
 gulp.task("browser-sync", function() {
   browserSync.init({
-    server: {
-      baseDir: "./"
+    proxy: "localhost:3000",
+    port: 3001,
+    open: false,
+    ui: {
+      port: 3002
     }
   });
 });
