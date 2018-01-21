@@ -31,7 +31,7 @@ export default class MessageForm extends React.Component {
             onChange={this.update()}
             id='msg-input'
             className="msg-form-body"
-            placeholder={`Message#${this.props.channel.name}`}
+            placeholder={`Message #${this.props.channel.name}`}
           />
           {/* <input type="submit" value="Send" className="msg-form-submit" /> */}
         </form>
