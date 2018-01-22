@@ -9,7 +9,7 @@ export default class ChannelIndexItem extends React.Component {
   render() {
     return (
       <li>
-        # <Link to={`/messages/${this.props.channel.id}`}>
+        <Link to={`/channels/${this.props.channel.id}/messages`}>
           {this.props.channel.name}
         </Link>
       </li>

@@ -27,6 +27,7 @@
 
 .msg-list {
   margin: 20px 0;
+  
 }
 
 .msg-index {
@@ -43,8 +44,10 @@
   z-index: 1;
   padding: 10px 20px;
   width: 98%;
-  top: 10px;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+  top: 0;
+  line-height: 36px;
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+  border-top: 1px solid rgba(0, 0, 0, .1);
 }
 
 .msg-container {

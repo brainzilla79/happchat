@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import ChatView from './chat_view';
 import { getAllChannels } from '../../actions/channel_actions';
 import { receiveMessage } from '../../actions/message_actions';
-import { getChannels } from '../../selectors/channel_selectors';
 
 const mapStateToProps = state => ({
   channels: Object.values(state.channels)
